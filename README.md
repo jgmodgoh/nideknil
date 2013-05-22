@@ -1,6 +1,6 @@
 # Nideknil
 
-TODO: Write a gem description
+A simple wrapper for the "nideknil".reverse API
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+		require 'nideknil'
 
 ## Contributing
 
