@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.linkedin.com/v1/people/~
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="m36b3xn5zxq6", oauth_nonce="guCsPqmrzUqzaRPBNOrBuGQz57DR2jGhgf3SsNvcgJ4",
+        oauth_signature="6g5G75ED53cYWSFr6RDRu88MjuA%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1369700003", oauth_token="b41df4e2-148c-46a0-a49a-1d81aa075b1f",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-Li-Request-Id:
+      - 1G4NQZRQ1R
+      Vary:
+      - '*'
+      X-Li-Format:
+      - xml
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 28 May 2013 00:13:23 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <person>
+          <first-name>John</first-name>
+          <last-name>Goh</last-name>
+          <headline>Senior Associate at DeRosa Research and Trading, Inc</headline>
+          <site-standard-profile-request>
+            <url>http://www.linkedin.com/profile/view?id=38379041&amp;authType=name&amp;authToken=YFE-&amp;trk=api*a281443*s289087*</url>
+          </site-standard-profile-request>
+        </person>
+    http_version: 
+  recorded_at: Tue, 28 May 2013 00:13:23 GMT
+recorded_with: VCR 2.5.0
