@@ -6,6 +6,7 @@ require 'minitest/pride'
 require 'webmock'
 require 'vcr'
 
+
 def testuser_config
 	{	api_key:       'm36b3xn5zxq6',
 		api_secret:    'OYjNv31lsEHMA6k5',
