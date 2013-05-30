@@ -18,7 +18,7 @@ describe "Nideknil::Client" do
 
   describe "#config" do
     it "should return default config hash" do
-    	default_config = user.config(testuser_config)
+			default_config = user.config(testuser_config)
       default_config[:options][:site].must_equal 'https://api.linkedin.com'
     end
   end
