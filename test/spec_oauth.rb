@@ -2,14 +2,13 @@ require 'test_helper'
 
 describe "Nideknil::Client" do
 
-	let(:config) {userConfig}
-	let(:site) {userConfig[:configuration]}
+	let(:site) {testuser_config[:configuration]}
 	let(:user) {Nideknil::Client.new}
-	let(:configuredUser) {Nideknil::Client.new(config)}
+	let(:configured_user) {Nideknil::Client.new(testuser_config)}
 	
 	describe "instantiating new object" do
 		it "with configured tokens & keys should initialise valid accessToken variable" do
-			configuredUser.accessToken.must_be_instance_of OAuth::AccessToken
+			configured_user.access_token.must_be_instance_of OAuth::AccessToken
 		end
 
 		it "without hash should raise error" do
@@ -17,10 +16,10 @@ describe "Nideknil::Client" do
 		end
 	end
 
-	describe "#set_default_config" do
+	describe "#config" do
 		it "should return default config hash" do
-			defaultConfig = user.set_config(config)
-			defaultConfig[:options][:site].must_equal 'https://api.linkedin.com'
+			default_config = user.config(testuser_config)
+			default_config[:options][:site].must_equal 'https://api.linkedin.com'
 		end
 	end
 
@@ -34,10 +33,10 @@ describe "Nideknil::Client" do
 
   describe "#get_access_token" do 
   	it "with valid keys & tokens should return a valid OAuth::AccessToken object that requests GET from LinkedIn" do
-	  	accessToken = configuredUser.get_access_token
-	  	accessToken.must_be_instance_of OAuth::AccessToken
+	  	access_token = configured_user.get_access_token
+	  	access_token.must_be_instance_of OAuth::AccessToken
 	  	VCR.use_cassette('valid_access_token') do
-	  		accessToken.get("http://api.linkedin.com/v1/people/~").inspect.must_match "Net::HTTPOK 200" 
+	  		access_token.get("http://api.linkedin.com/v1/people/~").inspect.must_match "Net::HTTPOK 200" 
 	  	end
 	  end
 

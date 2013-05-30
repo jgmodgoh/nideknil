@@ -3,31 +3,35 @@ require 'ostruct'
 module Nideknil  
 	class Client
 		
-		attr_reader :accessToken
+		attr_reader :access_token
 		
-		def initialize(config={})
-			raise ArgumentError, 'argument needs to be hash' unless config.instance_of? Hash
-			@userConfig = set_config(config)
-			@accessToken = get_access_token
+		def initialize(user_config={})
+			raise ArgumentError, 'argument needs to be hash' unless user_config.instance_of? Hash
+			@user_config = config(user_config)
+			@access_token = get_access_token
 		end
 
 		def client
-			OAuth::Consumer.new(user_config[:apiKey], user_config[:apiSecret], user_config[:options])
+			OAuth::Consumer.new(user_config[:api_key], user_config[:api_secret], user_config[:options])
 		end
 	
 		def get_access_token
-			OAuth::AccessToken.new(client, user_config[:userToken], user_config[:userSecret])
+			OAuth::AccessToken.new(client, user_config[:user_token], user_config[:user_secret])
 		end
 
-		def set_config(args)
-			config = Hash.new
-			config[:options] = {site: 'https://api.linkedin.com'}
-			[:apiKey, :apiSecret, :userToken, :userSecret].each {|key| config[key] = args[key] || key }
-			config
+		def config(user_config)
+			prepared_config = 
+			{	api_key: 		"api key",
+				api_secret: 	"api secret",
+				user_token: 	"user token",
+				user_secret: "user secret",
+				options: 		{site: "https://api.linkedin.com"}
+			}.merge(user_config)
+			prepared_config
 		end
 	
 		def user_config
-			@userConfig 
+			@user_config 
 		end
 
 	end
