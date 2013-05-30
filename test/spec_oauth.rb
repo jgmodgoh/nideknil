@@ -18,7 +18,7 @@ describe "Nideknil::Client" do
 
   describe "#config" do
     it "should return default config hash" do
-			default_config = user.config(testuser_config)
+      default_config = user.config(testuser_config)
       default_config[:options][:site].must_equal 'https://api.linkedin.com'
     end
   end
@@ -32,7 +32,7 @@ describe "Nideknil::Client" do
   end
 
   describe "#get_access_token" do 
-  	it "with valid keys & tokens should return a valid OAuth::AccessToken object that requests GET from LinkedIn" do
+    it "with valid keys & tokens should return a valid OAuth::AccessToken object that requests GET from LinkedIn" do
       access_token = configured_user.get_access_token
       access_token.must_be_instance_of OAuth::AccessToken
       VCR.use_cassette('valid_access_token') do
