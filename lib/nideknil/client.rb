@@ -5,6 +5,28 @@ module Nideknil
 
     attr_reader :access_token
 
+    # Public: Initialize a Nideknil Client.
+    #
+    # user_config - The Hash containing user key, secrets and token. The Hash needs to be of
+    #               
+    #  user_config = {api_key:     "api key",
+    #                api_secret:  "api secret",
+    #                user_token:  "user token",
+    #                user_secret: "user secret"} 
+    #               
+    #                where the values are unique inputs for each user from LinkedIn.
+    #
+    # Examples
+    #
+    #   user_config = {api_key:     "123456789012",
+    #                api_secret:  "1234567890123456",
+    #                user_token:  "1234567-1234-1234-1234-123456789012",
+    #                user_secret: "1234567-1234-1234-1234-123456789012"}   
+    #
+    #   Nideknil::Client.new(user_config)
+    #   # => #<OAuth::AccessToken:0x007fa3d3c28818 @token="XXXX", @secret="XXXX", @consumer="XXXX", @params={XXXX}>
+    #
+    # Returns an OAuth::AccessToken with user configuration or default configuration if no arg is provided
     def initialize(user_config={})
       raise ArgumentError, 'argument needs to be hash' unless user_config.instance_of? Hash
       @user_config = config(user_config)
