@@ -26,13 +26,13 @@ module Nideknil
         user_token:  "user token",
         user_secret: "user secret",
         options:     {site: "https://api.linkedin.com"}
-      }.merge(user_config)
-      prepared_config
-    end
+        }.merge(user_config)
+        prepared_config
+      end
 
-    def user_config
-      @user_config 
-    end
+      def user_config
+        @user_config 
+      end
 
   end
 end
