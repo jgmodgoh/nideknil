@@ -1,3 +1,5 @@
+Gem is still in development phase ......
+
 # Nideknil
 
 A simple wrapper for the "nideknil".reverse API
