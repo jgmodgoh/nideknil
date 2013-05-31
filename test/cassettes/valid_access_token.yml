@@ -7,16 +7,14 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - ! '*/*'
       User-Agent:
       - OAuth gem v0.4.7
       Authorization:
-      - OAuth oauth_consumer_key="m36b3xn5zxq6", oauth_nonce="guCsPqmrzUqzaRPBNOrBuGQz57DR2jGhgf3SsNvcgJ4",
-        oauth_signature="6g5G75ED53cYWSFr6RDRu88MjuA%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1369700003", oauth_token="b41df4e2-148c-46a0-a49a-1d81aa075b1f",
+      - OAuth oauth_consumer_key="m36b3xn5zxq6", oauth_nonce="x5w6grZLoCiHxB9p1yTcT95vAd963uphuUYX4ea50",
+        oauth_signature="snRh25EM%2BCXSUrZMNm7bpnlGSNY%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1370017678", oauth_token="b41df4e2-148c-46a0-a49a-1d81aa075b1f",
         oauth_version="1.0"
   response:
     status:
@@ -26,9 +24,9 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       X-Li-Request-Id:
-      - 1G4NQZRQ1R
+      - U03K7MZQD8
       Vary:
-      - '*'
+      - ! '*'
       X-Li-Format:
       - xml
       Content-Type:
@@ -36,19 +34,14 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Tue, 28 May 2013 00:13:23 GMT
+      - Fri, 31 May 2013 16:27:59 GMT
     body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <person>
-          <first-name>John</first-name>
-          <last-name>Goh</last-name>
-          <headline>Senior Associate at DeRosa Research and Trading, Inc</headline>
-          <site-standard-profile-request>
-            <url>http://www.linkedin.com/profile/view?id=38379041&amp;authType=name&amp;authToken=YFE-&amp;trk=api*a281443*s289087*</url>
-          </site-standard-profile-request>
-        </person>
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<person>\n
+        \ <first-name>John</first-name>\n  <last-name>Goh</last-name>\n  <headline>Senior
+        Associate at DeRosa Research and Trading, Inc</headline>\n  <site-standard-profile-request>\n
+        \   <url>http://www.linkedin.com/profile/view?id=38379041&amp;authType=name&amp;authToken=YFE-&amp;trk=api*a281443*s289087*</url>\n
+        \ </site-standard-profile-request>\n</person>\n"
     http_version: 
-  recorded_at: Tue, 28 May 2013 00:13:23 GMT
+  recorded_at: Fri, 31 May 2013 16:27:58 GMT
 recorded_with: VCR 2.5.0

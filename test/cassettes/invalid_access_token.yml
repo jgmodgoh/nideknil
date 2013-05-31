@@ -7,16 +7,14 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - ! '*/*'
       User-Agent:
       - OAuth gem v0.4.7
       Authorization:
-      - OAuth oauth_consumer_key="apiKey", oauth_nonce="ZeP4rzVF2DbZglS3C5KaYEL0PEoZVToSdZ1Fwmb9js",
-        oauth_signature="Vf15oV0AF1sn%2FcJUZyI9wKxx8So%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1369700003", oauth_token="userToken", oauth_version="1.0"
+      - OAuth oauth_consumer_key="api%20key", oauth_nonce="LO7nUKKiWaG2cWU3jB2YWnQ3ruHluvHyCeW5Wt0j4g",
+        oauth_signature="WCWEOWtrpW%2FssyK0naUfl2U%2BdPw%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1370017677", oauth_token="user%20token", oauth_version="1.0"
   response:
     status:
       code: 401
@@ -25,30 +23,23 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       X-Li-Request-Id:
-      - 4TUS7EJYIK
+      - KX9LNSXON2
       Date:
-      - Tue, 28 May 2013 00:13:23 GMT
+      - Fri, 31 May 2013 16:27:58 GMT
       Vary:
-      - '*'
+      - ! '*'
       X-Li-Format:
       - xml
-      X-Li-R2-W-Ic-2:
-      - com.linkedin.container.rpc.cluster.serviceInfo=PROD-ELA4%2Fauth%2F0.0.2000-RC1.26335%2Fela4-app1799%2Fi001
       Content-Type:
       - text/xml;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '266'
     body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <error>
-          <status>401</status>
-          <timestamp>1369700004034</timestamp>
-          <request-id>4TUS7EJYIK</request-id>
-          <error-code>0</error-code>
-          <message>[unauthorized]. No consumer found for key apiKey</message>
-        </error>
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<error>\n
+        \ <status>401</status>\n  <timestamp>1370017679179</timestamp>\n  <request-id>KX9LNSXON2</request-id>\n
+        \ <error-code>0</error-code>\n  <message>OAuth parameters should not contain
+        spaces</message>\n</error>\n"
     http_version: 
-  recorded_at: Tue, 28 May 2013 00:13:24 GMT
+  recorded_at: Fri, 31 May 2013 16:27:58 GMT
 recorded_with: VCR 2.5.0
