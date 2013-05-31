@@ -34,7 +34,6 @@ module Nideknil
     def initialize(user_secrets={})
       raise ArgumentError, 'argument needs to be hash' unless user_secrets.instance_of? Hash
       config(user_secrets)
-      @access_token = get_access_token
     end
 
     def client
@@ -47,6 +46,7 @@ module Nideknil
 
     def config(user_secrets)
       @secrets = @secrets ? @secrets.merge(user_secrets) : default_config.merge(user_secrets); 
+      @access_token = get_access_token
       self
     end
 
